@@ -40,7 +40,7 @@
 
     win['clickTabs_' + hash] = function(pos) {
         var a = document.getElementById(defaults.containerId),
-            b = a.getElementsByTagName('ul'),
+            b = a.getElementsByTagName('ol'),
             c = a.getElementsByTagName('ul')[0],
             d = c.getElementsByTagName('a');
         for (var t = 0, ten = b.length; t < ten; ++t) {
@@ -75,11 +75,11 @@
             return a.term.localeCompare(b.term);
         }) : category;
         // Build the tabs skeleton
-        skeleton = '<nav class="sitemap-tabs"><ul>';
+        skeleton = '<nav class="sitemap-tabs"><ol>';
         for (var h = 0, cen = category.length; h < cen; ++h) {
             skeleton += '<li class="sitemap-tab-item-' + h + '"><a onclick="clickTabs_' + hash + '(' + h + ');return false;" onmousedown="return false;" href="javascript:;">' + category[h].term + '</a></li>';
         }
-        skeleton += '</ul></nav>';
+        skeleton += '</ol></nav>';
         // Bulid the tabs contents skeleton
         skeleton += '<div class="sitemap-content">';
         for (var i = 0, cen = category.length; i < cen; ++i) {
